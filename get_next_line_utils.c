@@ -55,7 +55,7 @@ char	*ft_strjoin(char *save_str, char *buff)
 	}
 	if (!save_str || !buff)
 		return (NULL);
-	str = malloc(sizeof(char) * ((ft_strlen(save_str) + ft_strlen(buff)) + 1));
+	str = malloc(sizeof(char) * ((ft_strlen(save_str) + ft_strlen(buff)) + 2));
 	if (!str)
 		return (NULL);
 	i = -1;
@@ -80,7 +80,7 @@ char	*ft_get_line(char *save_str)
 		return (NULL);
 	while (save_str[i] && save_str[i] != '\n')
 		i++;
-	str = malloc(sizeof(char) * (i + 1));
+	str = malloc(sizeof(char) * (i + 2));
 	if (!str)
 		return (NULL);
 	i = 0;
