@@ -6,7 +6,7 @@
 /*   By: nadesjar <dracken24@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 18:34:41 by marvin            #+#    #+#             */
-/*   Updated: 2022/04/29 10:53:07 by nadesjar         ###   ########.fr       */
+/*   Updated: 2022/05/03 15:56:14 by nadesjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	*ft_strjoin(char *save_str, char *buff)
 	}
 	if (!save_str || !buff)
 		return (NULL);
-	str = malloc(sizeof(char) * ((ft_strlen(save_str) + ft_strlen(buff)) + 2));
+	str = malloc(sizeof(char) * ((ft_strlen(save_str) + ft_strlen(buff)) + 1));
 	if (!str)
 		return (NULL);
 	i = -1;
