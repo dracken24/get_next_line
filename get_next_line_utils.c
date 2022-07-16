@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nadesjar <dracken24@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/04 18:34:41 by marvin            #+#    #+#             */
-/*   Updated: 2022/05/03 15:56:14 by nadesjar         ###   ########.fr       */
+/*   Created: 2022/04/08 14:13:48 by nadesjar          #+#    #+#             */
+/*   Updated: 2022/04/28 17:57:42 by nadesjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlen(char *str)
 {
@@ -56,7 +56,7 @@ char	*ft_strjoin(char *save_str, char *buff)
 	if (!save_str || !buff)
 		return (NULL);
 	str = malloc(sizeof(char) * ((ft_strlen(save_str) + ft_strlen(buff)) + 1));
-	if (!str)
+	if (str == NULL)
 		return (NULL);
 	i = -1;
 	k = 0;

@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nadesjar <dracken24@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/21 15:58:59 by nadesjar          #+#    #+#             */
-/*   Updated: 2022/04/29 13:28:26 by nadesjar         ###   ########.fr       */
+/*   Created: 2022/04/08 14:14:14 by nadesjar          #+#    #+#             */
+/*   Updated: 2022/04/20 13:05:23 by nadesjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
+#include <limits.h>
 
 char	*ft_read_fd(int fd, char *save_str)
 {
@@ -32,21 +33,21 @@ char	*ft_read_fd(int fd, char *save_str)
 		buff[rd_bytes] = '\0';
 		save_str = ft_strjoin(save_str, buff);
 	}
-	free (buff);
+	free(buff);
 	return (save_str);
 }
 
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*save_str;
+	static char	*save_str[4096];
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
-	save_str = ft_read_fd(fd, save_str);
-	if (!save_str)
+	save_str[fd] = ft_read_fd(fd, save_str[fd]);
+	if (!save_str[fd])
 		return (NULL);
-	line = ft_get_line(save_str);
-	save_str = ft_get_nline(save_str);
+	line = ft_get_line(save_str[fd]);
+	save_str[fd] = ft_get_nline(save_str[fd]);
 	return (line);
 }

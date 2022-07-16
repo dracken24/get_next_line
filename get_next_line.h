@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nadesjar <dracken24@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/04 11:31:07 by marvin            #+#    #+#             */
-/*   Updated: 2022/04/21 16:00:26 by nadesjar         ###   ########.fr       */
+/*   Created: 2022/04/08 14:12:33 by nadesjar          #+#    #+#             */
+/*   Updated: 2022/07/16 11:15:20 by nadesjar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdio.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 50
+#  define BUFFER_SIZE 5
 # endif
 
 char	*get_next_line(int fd);
